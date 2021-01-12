@@ -11,7 +11,6 @@ this.onmessage = function(e) {
         this.tenthOfSec = e.data.tenthOfSec;
 
         this.interval = setInterval(() => {
-            console.log("start....");
             this.tenthOfSec++;
 
             if(this.tenthOfSec == 10){
@@ -29,11 +28,9 @@ this.onmessage = function(e) {
 
             this.postMessage({hr: this.hr, min: this.min, sec: this.sec, tenthOfSec: this.tenthOfSec});
         }, 100);
-        console.log("start: ", this.interval);
     } 
     else if (e.data.op === 'stop') {
         clearInterval(this.interval);
-        console.log("stop: ", this.interval);
     }
     else if (e.data.op === 'reset') {
         this.hr = 0;
