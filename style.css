@@ -1,0 +1,25 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#stopWatch {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#digits {
+    width: 150px;
+    height: 30px;
+    padding: 10px;
+    text-align: center;
+    background-color:black;
+    color: #33FF33;
+    font-size: 22px;
+    font-family: 'Iceland', cursive;
+    border-radius: 8px;
+}
+
+#buttons {
+    margin: 8px 1px;
+}
