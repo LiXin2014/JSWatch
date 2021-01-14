@@ -23,3 +23,18 @@ body {
 #buttons {
     margin: 8px 1px;
 }
+
+
+#alarmDes {
+    margin: 20px 1px;
+    font-size: large;
+}
+
+label {
+    display: block;
+    font-size: 0.8em;
+}
+
+#alarm > div {
+    margin-bottom: 0.5em;
+}
