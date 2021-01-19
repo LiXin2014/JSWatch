@@ -2,6 +2,14 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+#plan {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/*---------------------------------------------------*/
+/*Stop watch styles*/
 #stopWatch {
     display: flex;
     align-items: center;
@@ -30,11 +38,40 @@ body {
     font-size: large;
 }
 
-label {
+#stopWatch label {
     display: block;
     font-size: 0.8em;
 }
 
 #alarm > div {
     margin-bottom: 0.5em;
+}
+
+
+/*---------------------------------------------------*/
+/*Todo area styles*/
+#addTodo {
+    height: 2em;
+    border: 0;
+    border-bottom: 2px solid gray;
+}
+
+#addTodo:focus {
+    height: 2em;
+    border: 0;
+    border-bottom: 2px solid rgb(212, 145, 145);
+    outline: none;
+}
+
+#todos {
+    padding: 4px;
+}
+
+#todoArea #todoitem {
+    height: 1.5em;
+}
+
+#todoArea label {
+    height: 2em;
+    padding: 0px 4px;
 }

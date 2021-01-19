@@ -2,6 +2,7 @@
 import timer from "./Timer.js";
 import alarm from "./alarm.js";
 import task from "./task.js";
+import { ToDos } from "./todos.js";
 
 class StopWatch {
 
@@ -18,6 +19,8 @@ class StopWatch {
         startButton.addEventListener("click", timer.startTimer.bind(timer));
         stopButton.addEventListener("click", timer.stopTimer.bind(timer));
         resetButton.addEventListener("click", timer.resetTimer.bind(timer));
+        
+        this.todos = new ToDos();
     }
     
     updateDigits(hr, min, sec, tenthOfSec) {

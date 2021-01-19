@@ -8,30 +8,42 @@
 </head>
 
 <body>
-    <div id="stopWatch">
-        <div id="digits">00:00:00:0</div>
-        <div id="buttons">
-            <button id="start">Start</button>
-            <button id="stop">Stop</button>
-            <button id="reset">Reset</button>
+    <div id="plan">
+        <div id="todoArea">
+            <input type="text" id="addTodo" placeholder="Add a task">
+            <div id="todos">
+            </div>
         </div>
 
-        <div id="alarmDes">Start a task</div>
+        <div id="stopWatch">
+            <div id="digits">00:00:00:0</div>
+            <div id="buttons">
+                <button id="start">Start</button>
+                <button id="stop">Stop</button>
+                <button id="reset">Reset</button>
+            </div>
+    
+            <div id="alarmDes">Start a task</div>
+    
+            <div id="alarm">
+                <div>
+                    <label>Hour: </label><input type="text" id="hour" value="0">
+                </div>
+                <div>
+                    <label>Min:  </label><input type="text"  id="min" value="0">
+                </div>
+                <div>
+                    <label>Task Description:  </label>
+                    <textarea name="taskDescription"  id="taskDes" cols="30" rows="10"></textarea>
+                </div>
+    
+                <input type="button" id='startTask' value="Start Task"></input>
+                <input type="button" id='stopAlarm' value="Stop Alarm"></input>
+            </div>
+        </div>
 
-        <div id="alarm">
-            <div>
-                <label>Hour: </label><input type="text" id="hour" value="0">
-            </div>
-            <div>
-                <label>Min:  </label><input type="text"  id="min" value="0">
-            </div>
-            <div>
-                <label>Task Description:  </label>
-                <textarea name="taskDescription"  id="taskDes" cols="30" rows="10"></textarea>
-            </div>
+        <div id="completedArea">
 
-            <input type="button" id='startTask' value="Start Task"></input>
-            <input type="button" id='stopAlarm' value="Stop Alarm"></input>
         </div>
     </div>
     <script type="module" src="script.js"></script>
