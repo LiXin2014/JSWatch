@@ -3,9 +3,9 @@ class CompletedToDos {
         this.completedToDosElement = document.querySelector("#completedArea");
     }
 
-    addFinishedTask(task, startTime, endTime) {
+    addFinishedTask(task, totalTimeMessage, timePeriodMessage) {
         var finishedTaskDiv = document.createElement("div");
-        finishedTaskDiv.innerText = "Have been doing" + task + " from " + startTime + " to " + endTime;
+        finishedTaskDiv.innerText = "Have been doing " + task + " for " + totalTimeMessage + " : \n" + timePeriodMessage;
         this.completedToDosElement.appendChild(finishedTaskDiv);
     }
 }

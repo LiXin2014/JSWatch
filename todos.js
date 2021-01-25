@@ -1,5 +1,6 @@
-import {ToDo} from "./todo.js";
+import { ToDo } from "./todo.js";
 import timer from "./Timer.js";
+import * as ToDoStates from "./todoStates.js";
 
 export class ToDos {
     constructor() {
@@ -8,7 +9,6 @@ export class ToDos {
 
         this.areaToAddToDo = document.querySelector("#todos");
 
-        //this.todoList = [];
         this.todoMap = new Map();
     }
 
@@ -41,12 +41,10 @@ export class ToDos {
             //startButton.setAttribute("type", "button");
             startButton.textContent = "start";
             //startButton.setAttribute("value", "start");
-            
+
             todo.appendChild(startButton);
-            
+
             // add to do item to the list, and clear out the input.
-            //this.todoList.push({id: this.todoList.length+1, text: this.addToDoInput.value});
-            //this.todoList.push(new ToDo(checkboxId, this.addToDoInput.value));
             this.todoMap.set(checkboxId, new ToDo(checkboxId, this.addToDoInput.value));
             this.addToDoInput.value = "";
 
@@ -64,7 +62,7 @@ export class ToDos {
             startButton.disabled = true;
             var finishedTodo = this.todoMap.get(checkboxId);
             //var now = new Date().now;
-            finishedTodo.setFinishTime(new Date());
+            finishedTodo.finish(new Date());
         }
         else {
             console.log(checkboxId, "unchecked");
@@ -74,13 +72,20 @@ export class ToDos {
     }
 
     startTodo(startButton, checkboxId) {
-        //if (checkbox.checked) {
-            console.log(checkboxId, "started");
-            
+        var todoItem = this.todoMap.get(checkboxId);
+
+        if (todoItem.getToDoState() === ToDoStates.Started) {
+            var pauseTime = new Date();
+            console.log("pause time: ", pauseTime);
+            startButton.textContent = "start";
+            todoItem.pause(pauseTime);
+        }
+        else if (todoItem.getToDoState() === ToDoStates.Created || todoItem.getToDoState() === ToDoStates.Paused) {
+            var startTime = new Date();
+            console.log(checkboxId, "start task");
+            console.log("start time: ", startTime);
             startButton.textContent = "pause";
-            var startedTodo = this.todoMap.get(checkboxId);
-            //var now = new Date().now;
-            startedTodo.setStartTime(new Date());
-            timer.startTimer();
+            todoItem.start(startTime);
+        }
     }
 }
