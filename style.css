@@ -75,3 +75,8 @@ body {
     height: 2em;
     padding: 0px 4px;
 }
+
+#todoArea .finishedToDo {
+    text-decoration: line-through;
+    color: gray;
+}

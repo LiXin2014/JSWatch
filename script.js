@@ -21,6 +21,11 @@ class StopWatch {
         resetButton.addEventListener("click", timer.resetTimer.bind(timer));
         
         this.todos = new ToDos();
+
+        // set number of intervals
+        this.numOfIntervals = 0;
+        this.numOfIntervalElement = document.querySelector("#numOfIntervals");
+        this.numOfIntervalElement.textContent = this.numOfIntervals;
     }
     
     updateDigits(hr, min, sec, tenthOfSec) {
@@ -32,6 +37,9 @@ class StopWatch {
 
         if(alarmIsSet && checkHour && checkMin && sec === 0) {
             alarm.play();
+            timer.stopTimer();
+            this.numOfIntervals++;
+            this.numOfIntervalElement.textContent = this.numOfIntervals;
         }
     }
 
