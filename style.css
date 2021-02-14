@@ -26,6 +26,7 @@ body {
     font-size: 22px;
     font-family: 'Iceland', cursive;
     border-radius: 8px;
+    text-shadow: 0 0 3px #33FF33;
 }
 
 #buttons {
@@ -33,7 +34,7 @@ body {
 }
 
 
-#alarmDes {
+#intervalDes {
     margin: 20px 1px;
     font-size: large;
 }
@@ -43,7 +44,7 @@ body {
     font-size: 0.8em;
 }
 
-#alarm > div {
+#interval > * {
     margin-bottom: 0.5em;
 }
 

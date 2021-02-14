@@ -1,7 +1,7 @@
 
 import timer from "./Timer.js";
 import alarm from "./alarm.js";
-import task from "./task.js";
+import interval from "./interval.js";
 import { ToDos } from "./todos.js";
 
 class StopWatch {
@@ -31,9 +31,9 @@ class StopWatch {
     updateDigits(hr, min, sec, tenthOfSec) {
         this.digits.innerHTML = this.formatNumber(hr) + ":" + this.formatNumber(min) + ":" + this.formatNumber(sec) + ":" + tenthOfSec.toString();
 
-        var checkHour = task.hour === hr;
-        var checkMin = task.min === min;
-        var alarmIsSet = task.hour !== 0 || task.min !== 0;
+        var checkHour = interval.hour === hr;
+        var checkMin = interval.min === min;
+        var alarmIsSet = interval.hour !== 0 || interval.min !== 0;
 
         if(alarmIsSet && checkHour && checkMin && sec === 0) {
             alarm.play();

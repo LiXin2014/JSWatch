@@ -1,7 +1,7 @@
 import timer from "./Timer.js";
 import alarm from "./alarm.js";
 
-class Task {
+class Interval {
    constructor() {
        this.hourInputElement = document.querySelector("#hour");
        this.hour = parseInt(this.hourInputElement.value);
@@ -15,11 +15,6 @@ class Task {
            this.min = parseInt(this.minInputElement.value);
         });
 
-       this.taskDescription = document.querySelector("#taskDes").value;
-
-       var starttaskButton = document.querySelector("#startTask");
-       starttaskButton.addEventListener("click", timer.startTimer.bind(timer));
-
        var stopAlarmButton = document.querySelector("#stopAlarm");
        stopAlarmButton.addEventListener("click", () => {
            alarm.stop();
@@ -29,5 +24,5 @@ class Task {
    } 
 }
 
-var task = new Task();
-export default task;
+var interval = new Interval();
+export default interval;

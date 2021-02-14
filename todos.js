@@ -79,6 +79,7 @@ export class ToDos {
             console.log("pause time: ", pauseTime);
             startButton.textContent = "start";
             todoItem.pause(pauseTime);
+            timer.stopTimer();
         }
         else if (todoItem.getToDoState() === ToDoStates.Created || todoItem.getToDoState() === ToDoStates.Paused) {
             var startTime = new Date();
@@ -86,6 +87,7 @@ export class ToDos {
             console.log("start time: ", startTime);
             startButton.textContent = "pause";
             todoItem.start(startTime);
+            timer.startTimer();
         }
     }
 }
