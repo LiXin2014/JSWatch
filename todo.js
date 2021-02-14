@@ -69,7 +69,14 @@ export class ToDo {
     }
 
     formatTime(time) {
-        return time.getHours() + ":"+ time.getMinutes() +":"+ time.getSeconds();
+        return this.formatNumber(time.getHours()) + ":"+ this.formatNumber(time.getMinutes()) +":"+ this.formatNumber(time.getSeconds());
+    }
+
+    formatNumber(number) {
+        if(number < 10){
+            return "0" + number;
+        }
+        return number;
     }
 }
 
